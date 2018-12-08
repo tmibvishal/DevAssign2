@@ -4,15 +4,11 @@ const app = express();
 const port = process.env.port || 4000;
 const bodyParser = require('body-parser');
 
-//pusher api for live commenting
-let Pusher = require('pusher');
-let pusher = new Pusher({
-    appId: "667914",
-    key: "1db8e21c1c79816cfa95",
-    secret: "91ab424adb61a09fa0b8",
-    cluster: "ap2",
-    encrypt: true
-});
+const http = require('http');
+const socketServer = http.Server(app);
+const Socket = require('socket.io');
+const io = Socket(socketServer);
+
 
 
 //for parsing application/json
@@ -24,20 +20,30 @@ app.use('/', express.static("public"));
 
 app.post('/comment', function (req, res) {
     console.log(req.body);
-    let commentObject = {
-        name: req.body.name,
-        email: req.body.email,
-        comment: req.body.comment
-    };
-    pusher.trigger('PersonalPage_Home', 'new_comment', commentObject);
     res.json({ commentAdded : true });
 });
+
 
 //error handler for 404 page
 app.use(function (req, res) {
     res.type("text").send("Page Not Found");
 });
 
-app.listen(port, function () {
+
+//Socket Connection
+io.on('connection', function(socket){
+    console.log('a user connected');
+    socket.broadcast.emit('hi');
+    socket.on('disconnect', function () {
+        console.log("user disconnected");
+    });
+    socket.on('comment', function (commentObject) {
+        //sending the comment received to the rest of the users
+        socket.emit("comment", commentObject);
+    })
+});
+
+
+socketServer.listen(port, function () {
     console.log("Listening at port " + port);
 });
