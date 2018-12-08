@@ -9,7 +9,7 @@ const socketServer = http.Server(app);
 const Socket = require('socket.io');
 const io = Socket(socketServer);
 
-
+const commentDb = require("./commentDatabase.js");
 
 //for parsing application/json
 app.use(bodyParser.json());
@@ -33,12 +33,16 @@ app.use(function (req, res) {
 //Socket Connection
 io.on('connection', function(socket){
     console.log('a user connected');
-    socket.broadcast.emit('hi');
+
+    socket.emit("initialization", commentDb.get());
+
     socket.on('disconnect', function () {
         console.log("user disconnected");
     });
     socket.on('comment', function (commentObject) {
+        commentDb.add(commentObject);
         //sending the comment received to the rest of the users
+        socket.broadcast.emit("comment", commentObject);
         socket.emit("comment", commentObject);
     })
 });

@@ -14,26 +14,26 @@
 
 <main>
     Hey there 2
-    <div class="comments">
+    <form class="comments" id="commentForm">
         <div class="head">
-            <input type="text" placeholder="Name"><input type="email" placeholder="Email">
-            <textarea rows="3" placeholder="Comment"></textarea>
+            <input type="text" placeholder="Name" id="nameField"><input type="email" placeholder="Email" id="emailField">
+            <textarea rows="3" placeholder="Comment" id="messageField"></textarea><input type="submit">
         </div>
         <div class="comment-list">
-            <ul>
+            <ul id="comment-list-ul">
                 <script id="templete-element" type="text/template">
-                    <li>
+
                         <div>
-                            <strong>Vishal Singh</strong>
-                            <span style="color: #818181">tmibvishal@gmail.com</span>
+                            <strong>{{name}}</strong>
+                            <span style="color: #818181">{{email}}</span>
                             <br>
-                            This is my comment
+                            {{message}}
                         </div>
-                    </li>
+
                 </script>
             </ul>
         </div>
-    </div>
+    </form>
 </main>
 </body>
 </html>
