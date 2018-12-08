@@ -1,0 +1,20 @@
+{
+  "name": "personalwebpage_devassign2",
+  "version": "1.0.0",
+  "description": "Personal Webpage",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tmibvishal/DevAssign2.git"
+  },
+  "author": "Vishal Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tmibvishal/DevAssign2/issues"
+  },
+  "homepage": "https://github.com/tmibvishal/DevAssign2#readme",
+  "dependencies": {}
+}
