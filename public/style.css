@@ -1,26 +1,29 @@
-body{
+body {
     font-family: "roboto", sans-serif;
     background-image: url("city_of_dreams-wallpaper-1920x1200.jpg");
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
-
-nav{
-    background-color: rgba(255, 255, 255, 0.5);
-    position: sticky;
-    top: 0px;
+main{
+    position: relative;
 }
-nav ul{
-    margin: auto;
+
+nav {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+}
+nav ul {
     display: block;
+
     width: 300px;
     height: 40px;
     list-style-type: none;
     padding: 0px;
 }
 
-nav ul li{
+nav ul li {
     line-height: 40px;
     text-align: center;
     display: block;
@@ -28,27 +31,122 @@ nav ul li{
     float: left;
 }
 
-nav ul li a{
+nav ul li a {
     font-weight: 700;
     text-decoration: none;
-    color: #555555;
-    padding: 10px;
+    color: #ffffff;
 }
 
-nav ul li a:hover{
-    color: #000;
-    text-decoration: none;
-    background-color: rgba(255, 255, 255, 0.5);
-    padding: 10px;
+@media screen and (max-width: 800px) {
+    .nav-wrapper {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        height: 100vh;
+        width: 100%;
+        z-index: -1;
+        background: white;
+        opacity: 0;
+        transition: all 1.2s;
+    }
+    .nav-wrapper ul{
+        position: absolute;
+        top: 50%;
+        width: 100%;
+    }
+    .nav-wrapper ul li{
+        width: 100%;
+        display: block;
+        float: none;
+        text-align: right;
+        margin-bottom: 10px;
+    }
+
+    .nav-wrapper ul li a{
+        display: inline-block;
+        padding: 10px 10px;
+        font-size: 1rem;
+        font-weight: 700;
+        color: black;
+        transition: all 0.2s ease;
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    .nav-wrapper ul li:nth-child(1) a{
+        transition-delay: 0.2s;
+    }
+    .nav-wrapper ul li:nth-child(2) a{
+        transition-delay: 0.4s;
+    }
+    .nav-wrapper ul li:nth-child(3) a{
+        transition-delay: 0.5s;
+    }
+
+
+    .nav-hambut{
+        position: fixed;
+        right: 10px;
+        top: 10px;
+        display: block;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        z-index: 2;
+    }
+
+    .nav-hambut i {
+        display: block;
+        width: 20px;
+        height: 2px;
+        background-color: white;
+        margin-top: 4px;
+        border-radius: 2px;
+    }
+
+    #nav:checked + .nav-hambut{
+        transform: rotate(45deg);
+    }
+
+    #nav:checked + .nav-hambut i{
+        background-color: black;
+        transition: transform 0.2s;
+    }
+
+    #nav:checked + .nav-hambut i:nth-child(1) {
+        transform: translateY(12px) rotate(180deg);
+    }
+    #nav:checked + .nav-hambut i:nth-child(2){
+        opacity: 0;
+    }
+    #nav:checked + .nav-hambut i:nth-child(3){
+        transform: rotate(90deg);
+    }
+    #nav:checked ~ .nav-wrapper{
+        z-index: 1;
+        opacity: 1;
+    }
+    #nav:checked ~ .nav-wrapper ul li a{
+        z-index: 1;
+        opacity: 1;
+        transform: translateX(0px);
+    }
 }
-.circular-image-parent{
+.hidden{
+    display: none;
+}
+
+
+
+.circular-image-parent {
     margin-top: 100px;
     margin-bottom: 100px;
     text-align: center;
     font-size: 1.3rem;
     color: white;
 }
-.circular-image{
+
+.circular-image {
     margin: auto;
     height: 250px;
     width: 250px;
@@ -57,19 +155,22 @@ nav ul li a:hover{
     background-size: cover;
     background-position: center;
     border-radius: 50%;
-    box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.5);
 }
-.information{
+
+.information {
     background-color: white;
     padding: 20px;
     box-sizing: border-box;
     margin: 10%;
     border-radius: 10px;
 }
+
 .comments {
     width: 50%;
 }
-.comments .head input, .comments .head textarea{
+
+.comments .head input, .comments .head textarea {
     width: calc(50% - 10px);
     margin: 5px;
     border-radius: 4px;
@@ -79,7 +180,7 @@ nav ul li a:hover{
     box-sizing: border-box;
 }
 
-.comments .head input:focus, .comments .head textarea:focus{
+.comments .head input:focus, .comments .head textarea:focus {
     border-color: #007a26;
     box-shadow: 0px 0px 10px 0px rgba(0, 122, 38, 0.5);
 }
@@ -87,11 +188,13 @@ nav ul li a:hover{
 .comments .head textarea {
     width: calc(100% - 10px);
 }
-.comment-list ul{
+
+.comment-list ul {
     list-style-type: none;
     padding: 0px;
 }
-.comment-list ul li{
+
+.comment-list ul li {
     border-left: 5px solid #adafa5;
     padding: 5px;
     padding-left: 15px;
