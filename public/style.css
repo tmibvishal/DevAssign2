@@ -1,7 +1,16 @@
 body{
     font-family: "roboto", sans-serif;
+    background-image: url("city_of_dreams-wallpaper-1920x1200.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
+nav{
+    background-color: rgba(255, 255, 255, 0.5);
+    position: sticky;
+    top: 0px;
+}
 nav ul{
     margin: auto;
     display: block;
@@ -20,19 +29,43 @@ nav ul li{
 }
 
 nav ul li a{
-
+    font-weight: 700;
     text-decoration: none;
-    color: #6c6c6c;
+    color: #555555;
     padding: 10px;
 }
 
 nav ul li a:hover{
+    color: #000;
     text-decoration: none;
-    color: black;
-    background-color: #e4e4e4;
+    background-color: rgba(255, 255, 255, 0.5);
     padding: 10px;
 }
-
+.circular-image-parent{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    text-align: center;
+    font-size: 1.3rem;
+    color: white;
+}
+.circular-image{
+    margin: auto;
+    height: 250px;
+    width: 250px;
+    background-image: url("https://i.imgur.com/8BSXB10.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.5);
+}
+.information{
+    background-color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 10%;
+    border-radius: 10px;
+}
 .comments {
     width: 50%;
 }
