@@ -1,13 +1,59 @@
+*{
+    box-sizing: border-box;
+}
+html{
+    height: 100%;
+    overflow: hidden;
+}
+
 body {
     font-family: "roboto", sans-serif;
-    background-image: url("city_of_dreams-wallpaper-1920x1200.jpg");
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    perspective: 1px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    transform-style: preserve-3d;
+z-index: -9;
+
 }
 main{
     position: relative;
+    z-index: 999;
+    background-color: white;
 }
+
+header{
+    min-height: 100vh;
+    position: relative;
+    transform-style: inherit;
+}
+
+header, header:before{
+    background: 50% 50%;
+}
+
+header::before{
+    bottom: 0px;
+    content: "";
+    left: 0px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    display: block;
+
+    background-image: url("background.png");
+    background-position: 50% 50%;
+    background-size: cover;
+
+
+    transform-origin: center center 0;
+    transform: translateZ(-1px) scale(2);
+    z-index: -10;
+    min-height: 100vh;
+}
+
 
 nav {
     position: fixed;
@@ -36,6 +82,8 @@ nav ul li a {
     text-decoration: none;
     color: #ffffff;
 }
+
+
 
 @media screen and (max-width: 800px) {
     .nav-wrapper {
