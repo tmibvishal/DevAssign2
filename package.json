@@ -21,7 +21,7 @@
   "homepage": "https://github.com/tmibvishal/DevAssign2#readme",
   "dependencies": {
     "express" : "4.16.4",
-    "body-parser": "1.18.4",
+    "body-parser": "1.18.3",
     "socket.io": "2.2.0"
   }
 }
