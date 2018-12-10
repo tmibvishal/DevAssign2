@@ -1,8 +1,8 @@
-*{
+* {
     box-sizing: border-box;
 }
 
-html{
+html {
     height: 100%;
 }
 
@@ -13,12 +13,12 @@ body {
     height: 100%;
 }
 
-main{
-padding: 0px 16px;
+main {
+    padding: 0px 16px;
     background-color: white;
 }
 
-header{
+header {
     padding: 10px;
     position: relative;
     min-height: 100vh;
@@ -26,7 +26,6 @@ header{
     background-image: url("resources/background.jpg");
     background-size: cover;
 }
-
 
 nav ul {
     display: block;
@@ -65,12 +64,16 @@ nav ul li a {
         opacity: 0;
         transition: all 1.2s;
     }
-    .nav-wrapper ul{
+
+    .nav-wrapper ul {
         position: absolute;
         top: 50%;
         width: 100%;
+        height: auto;
+        transform: translateY(-50%);
     }
-    .nav-wrapper ul li{
+
+    .nav-wrapper ul li {
         width: 100%;
         display: block;
         float: none;
@@ -78,7 +81,7 @@ nav ul li a {
         margin-bottom: 10px;
     }
 
-    .nav-wrapper ul li a{
+    .nav-wrapper ul li a {
         display: inline-block;
         padding: 10px 10px;
         font-size: 1rem;
@@ -89,18 +92,19 @@ nav ul li a {
         transform: translateX(-20px);
     }
 
-    .nav-wrapper ul li:nth-child(1) a{
+    .nav-wrapper ul li:nth-child(1) a {
         transition-delay: 0.2s;
     }
-    .nav-wrapper ul li:nth-child(2) a{
+
+    .nav-wrapper ul li:nth-child(2) a {
         transition-delay: 0.4s;
     }
-    .nav-wrapper ul li:nth-child(3) a{
+
+    .nav-wrapper ul li:nth-child(3) a {
         transition-delay: 0.5s;
     }
 
-
-    .nav-hambut{
+    .nav-hambut {
         position: fixed;
         right: 10px;
         top: 10px;
@@ -120,11 +124,11 @@ nav ul li a {
         border-radius: 2px;
     }
 
-    #nav:checked + .nav-hambut{
+    #nav:checked + .nav-hambut {
         transform: rotate(45deg);
     }
 
-    #nav:checked + .nav-hambut i{
+    #nav:checked + .nav-hambut i {
         background-color: black;
         transition: transform 0.2s;
     }
@@ -132,27 +136,30 @@ nav ul li a {
     #nav:checked + .nav-hambut i:nth-child(1) {
         transform: translateY(12px) rotate(180deg);
     }
-    #nav:checked + .nav-hambut i:nth-child(2){
+
+    #nav:checked + .nav-hambut i:nth-child(2) {
         opacity: 0;
     }
-    #nav:checked + .nav-hambut i:nth-child(3){
+
+    #nav:checked + .nav-hambut i:nth-child(3) {
         transform: rotate(90deg);
     }
-    #nav:checked ~ .nav-wrapper{
+
+    #nav:checked ~ .nav-wrapper {
         z-index: 1;
         opacity: 1;
     }
-    #nav:checked ~ .nav-wrapper ul li a{
+
+    #nav:checked ~ .nav-wrapper ul li a {
         z-index: 1;
         opacity: 1;
         transform: translateX(0px);
     }
 }
-.hidden{
+
+.hidden {
     display: none;
 }
-
-
 
 .circular-image-parent {
     margin-top: 100px;
@@ -175,19 +182,83 @@ nav ul li a {
     margin-bottom: 20px;
 }
 
-.information {
-    background-color: white;
-    box-sizing: border-box;
-    border-radius: 10px;
+
+
+.main-container1 {
+    margin: 10px;
+    text-align: center;
+    font-size: 1.3rem;
+    box-shadow: 0px 10px 10px -10px rgba(0,0,0,0.3);
+    margin-bottom: 40px;
+}
+
+.main-container2 {
+    display: flex;
+    margin: 8px;
+}
+
+.main-information2 {
+    margin: auto;
+    display: inline-block;
+    width: calc(95% - 210px);
+}
+
+.main-image2 {
+    margin: auto;
+    display: inline-block;
+    width: 210px;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+
+.main-container3 {
+     display: flex;
+    margin: 8px;
+ }
+
+.main-information3 {
+    margin: auto;
+    display: inline-block;
+    width: calc(95% - 210px);
+}
+
+.main-image3 {
+    margin: auto;
+    display: inline-block;
+    width: 210px;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.main-container4 {
+    display: flex;
+    margin: 8px;
+}
+.main-information41 {
+    margin: auto;
+    display: inline-block;
+    width: calc(47% - 100px);
+}
+.main-information42 {
+    margin: auto;
+    display: inline-block;
+    width: calc(47% - 100px);
+}
+.main-image4 {
+    margin: auto;
+    display: inline-block;
+    width: 210px;
+    text-align: center;
+    overflow-x: hidden;
 }
 
 
 
 
 
-
-
 .comments {
+    margin: 20px auto;
     width: 50%;
 }
 
@@ -222,4 +293,23 @@ nav ul li a {
     margin-bottom: 15px;
     box-sizing: border-box;
     background-color: #f4f4f4;
+}
+
+footer{
+    padding: 20px;
+    background-color: #f3f3f9;
+}
+
+.social-buttons{
+    width: 25px;
+    margin: 0px auto;
+    display: inline-block;
+}
+.social-buttons a{
+    padding: 5px;
+}
+
+.social-buttons a:hover img{
+    width: 20px;
+    transform: translate(-2px, -2px);
 }
