@@ -1,4 +1,14 @@
+
+
 window.onload = function () {
+
+    let header = document.getElementById("aheader");
+
+    window.onscroll = function() {
+        var scroll = this.scrollY;
+        header.style.backgroundPosition = `0px ${scroll/2}px`;
+    };
+
     let socket = io();
     let str = document.getElementById("templete-element").innerHTML;
     let comment_list_ul = document.getElementById("comment-list-ul");
