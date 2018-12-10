@@ -1,0 +1,8 @@
+{
+  "name": "personalwebpage_devassign2",
+  "version": "1.0.0",
+  "description": "Personal Webpage",
+  "repository": "git+https://github.com/tmibvishal/DevAssign2.git",
+  "keywords" : ["node", "express", "socket.io", "static"],
+  "image" : "heroku/nodejs"
+}
