@@ -1,9 +1,11 @@
 const utilities = require('./utilities.js');
 const express = require('express');
 const app = express();
-const port = process.env.port || 4000;
-const bodyParser = require('body-parser');
 
+const port = process.env.PORT || 8000;
+
+const bodyParser = require('body-parser');
+//yo nothing
 const http = require('http');
 const socketServer = http.Server(app);
 const Socket = require('socket.io');
@@ -48,6 +50,6 @@ io.on('connection', function(socket){
 });
 
 
-socketServer.listen(port, function () {
+socketServer.listen(port, function() {
     console.log("Listening at port " + port);
 });
